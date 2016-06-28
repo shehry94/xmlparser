@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="CIBS">
+				<alt mandatory="true" name="Package">
+					<feature mandatory="true" name="High_Speed"/>
+					<feature mandatory="true" name="Customized"/>
+					<feature mandatory="true" name="Simple"/>
+				</alt>
+				<or mandatory="true" name="Tariff">
+					<feature mandatory="true" name="Surcharge"/>
+					<feature mandatory="true" name="Dynamic_Charges"/>
+					<or mandatory="true" name="Roaming_Charges">
+						<feature mandatory="true" name="Fixed"/>
+						<feature mandatory="true" name="XnodeX"/>
+						<feature mandatory="true" name="User"/>
+					</or>
+					<or mandatory="true" name="Credits">
+						<feature mandatory="true" name="Amount"/>
+						<feature mandatory="true" name="Bandwidth"/>
+					</or>
+				</or>
+				<alt mandatory="true" name="Internet_Access_Medium">
+					<or mandatory="true" name="Wired_Internet_Access_Medium">
+						<feature mandatory="true" name="Twisted_Pair_Cable"/>
+						<feature mandatory="true" name="Telephone_Line"/>
+						<alt mandatory="true" name="Coaxial_Cable">
+							<feature mandatory="true" name="Copper_Lined"/>
+							<feature mandatory="true" name="Normal_Lined"/>
+						</alt>
+						<feature mandatory="true" name="Fibre_Optics"/>
+					</or>
+					<or mandatory="true" name="Wireless_Internet_Access_Medium">
+						<feature mandatory="true" name="Microwave"/>
+						<feature mandatory="true" name="Radiowave"/>
+						<feature mandatory="true" name="Infrared"/>
+					</or>
+				</alt>
+				<alt mandatory="true" name="Payment_Processing">
+					<feature mandatory="true" name="Card"/>
+					<feature mandatory="true" name="Cheque"/>
+					<feature mandatory="true" name="Cash"/>
+				</alt>
+				<or mandatory="true" name="Invoice_Generation">
+					<feature mandatory="true" name="Email_Invoice"/>
+					<feature mandatory="true" name="Fax_Invoice"/>
+				</or>
+				<alt mandatory="true" name="Internet_Options">
+					<or mandatory="true" name="Wired_BB">
+						<feature mandatory="true" name="Power_Line"/>
+						<feature mandatory="true" name="Fibre_To_Home"/>
+						<feature mandatory="true" name="Cable_Internet_Access"/>
+						<feature mandatory="true" name="DSL"/>
+						<feature mandatory="true" name="Integrated_Service_Digital_Network"/>
+						<feature mandatory="true" name="Dial_Up"/>
+						<feature mandatory="true" name="Asynchronus_Transfer_Mode_Frame_Relay"/>
+					</or>
+					<or mandatory="true" name="Wireless_BB">
+						<feature mandatory="true" name="Local_Multipoint_Distribution_Service"/>
+						<feature mandatory="true" name="Satelite_BB"/>
+						<alt mandatory="true" name="Mobile_BB">
+							<feature mandatory="true" name="Two_G"/>
+							<feature mandatory="true" name="Three_G"/>
+							<feature mandatory="true" name="Four_G"/>
+						</alt>
+						<feature mandatory="true" name="Wimax"/>
+						<feature mandatory="true" name="Wifi"/>
+					</or>
+				</alt>
+				<or name="Notification">
+					<feature mandatory="true" name="SMS_Notification"/>
+					<feature mandatory="true" name="Email_Notification"/>
+				</or>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
